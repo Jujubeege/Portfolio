@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+<head>
+  <title>Portfolio</title>
+
+  <style>
+    .nav-menu {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333; /* Dark background */
+      overflow: hidden;
+    }
+    .nav-item {
+      float: left; /* Horizontal items */
+    }
+    .nav-link {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .nav-link:hover {
+      background-color: #ddd; /* Gray on hover */
+      color: black;
+    }
+    /* Responsive Styles (for smaller screens) */
+     @media screen and (max-width: 600px) {
+      .nav-item {
+        float: none;
+        display: block; /* Stack items vertically */
+      }
+    }
+
+    table, th, td{
+      border: 1px solid black;
+    }
+
+    .carousel-container {
+      width: 500px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .carousel-slide {
+      display: none; /* Hide all slides initially */
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .dot-container {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+  </style>
+</head>
+
+<body>
+    <h2>Navigation Menu</h2>
+
+    <ul class="nav-menu">
+      <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Skills">Skills</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+    </ul>
+  <div id = "Home">
+    <h1>Julius Sasmito</h1>
+    <p>Freshly graduated software developer with a passion for gaming and a BSc from Drexel in Game Design and Production.
+    As a developer, I am well versed in Unity3D and associated languages such as Java, C# and C++ and have extensive experience in building AR and AI powered games and customer experiences.
+    Currently, I am looking for a position in topline tech companies focusing on gaming. During my downtime, I am also pursuing a tech bridge program 
+    at Carnegie Mellon to further enhance my technical knowledge in Computer Sciences. 
+    </p>
+  </div>
+  <div id = "Projects">
+    <h1>Projects</h1>
+    <h3>Hush</h3>
+    <div class="carousel-container">
+
+      <div class="carousel-slide fade">
+        <img src="https://img.itch.zone/aW1nLzEwNzc2NDQzLnBuZw==/original/8Hd3ES.png" alt="Image 1">
+      </div>
+  
+      <div class="carousel-slide fade">
+        <img src="https://img.itch.zone/aW1hZ2UvMTc1MzcwNS8xMDY1NjczOC5naWY=/794x1000/rWsry8.gif" alt="Image 2">
+      </div>
+  
+      <div class="carousel-slide fade">
+        <img src="https://img.itch.zone/aW1hZ2UvMTc1MzcwNS8xMDM3MjI2MC5naWY=/794x1000/5G7PZh.gif" alt="Image 3">
+      </div>
+  
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+      <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+    </div>
+    <div>Navigate darkness using nothing but echolocation - in this game, 
+your only means of sight comes from sounds made: your voice, your interaction, and the environment.
+Don't make too much noise though... you never know what's in the shadows...</div>
+  </div>
+  <h3>Little Echos</h3>
+  <div class="carousel-container">
+
+    <div class="carousel-slide fade">
+      <img src="https://img.itch.zone/aW1nLzE1NDQyNDk5LnBuZw==/347x500/ic6JoJ.png" alt="Image 1">
+    </div>
+
+    <div class="carousel-slide fade">
+      <img src="image2.jpg" alt="Image 2">
+    </div>
+
+    <div class="carousel-slide fade">
+      <img src="image3.jpg" alt="Image 3">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+  </div>
+  <div>Explore the mind of a high school senior, laid out in a larger than life fantastic yet familiar setting where memories manifested into artifacts allowing you to reflect on a story with themes of moving on and growing up.</div>
+
+  <div id = "Skills">
+    <h1>Skills</h1>
+    <p><table>
+      <tr>
+        <th>Programming Languages</th>
+        <th>Tools</th>
+        <th>Others</th>
+      </tr>
+      <tr>
+        <td>Java</td>
+        <td>Unity</td>
+        <td>AR/VR effects</td>
+      </tr>
+      <tr>
+        <td>Html</td>
+        <td>Unreal Engine</td>
+        <td>2D/3D Design</td>
+
+      </tr>
+      <tr>
+        <td>Python</td>
+        <td>Photoshop</td>
+        <td>Cross Functional partnership</td>
+      </tr>
+      <tr>
+        <td>C++</td>
+        <td>Autodesk Maya</td>
+        <td>CI/CD cycle management</td>
+      </tr>
+    </table></p>
+  </div>
+  <div id = "Contact">
+    <h1>Contact</h1>
+    <p>Linkdin: linkedin.com/in/julius-sasmito</p>
+    <p>Phone: 7186120062 (Mobile)</p>
+    <p>Email: juliussasmito@hotmail.com</p>
+  </div>
+
+  <script>
+        var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("carousel-slide");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+</body>
+</html>
