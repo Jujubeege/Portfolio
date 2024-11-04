@@ -130,6 +130,52 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+
+    .progress-container {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 5px;
+    }
+
+    .progress-bar {
+      width: 0%; 
+      height: 30px;
+      background-color: #4CAF50;
+      border-radius: 5px;
+      transition: width 0.5s ease-in-out; 
+    }
   </style>
 </head>
 
@@ -139,6 +185,7 @@
     <ul class="nav-menu">
       <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="#Projects">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#Projects Time">Projects Timeline</a></li>
       <li class="nav-item"><a class="nav-link" href="#Skills">Skills</a></li>
       <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
     </ul>
@@ -187,14 +234,39 @@ your only means of sight comes from sounds made: your voice, your interaction, a
 Don't make too much noise though... you never know what's in the shadows...</div>
 </div>
   </div>
-</div>
-  <h3>Little Echos</h3>
+   <h3>Little Echos</h3>
   
   <div>Explore the mind of a high school senior, laid out in a larger than life fantastic yet familiar setting where memories manifested into artifacts allowing you to reflect on a story with themes of moving on and growing up.</div>
 
+</div>
+ 
+  <div id ="Projects Time"></div>
+  <h1>Project Timeline</h1>
+  <p><table>
+    <tr>
+      <th>Project Title</th>
+      <th>Project Duration</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>Hush</td>
+      <td>Sept 2022 - Mar 2023</td>
+      <td>Navigate darkness using nothing but echolocation - in this game, 
+        your only means of sight comes from sounds made: your voice, your interaction, and the environment.
+        Don't make too much noise though... you never know what's in the shadows...</td>
+    </tr>
+    <tr>
+      <td>Little Echos</td>
+      <td>Sept 2023 - June 2024</td>
+      <td>Explore the mind of a high school senior, laid out in a larger than life fantastic yet familiar setting where memories manifested into artifacts allowing you to reflect on a story with themes of moving on and growing up.</td>
+
+    </tr>
+
+  </table></p>
+
   <div id = "Skills">
     <h1>Skills</h1>
-    <p><table>
+   <!-- <p><table>
       <tr>
         <th>Programming Languages</th>
         <th>Tools</th>
@@ -221,7 +293,29 @@ Don't make too much noise though... you never know what's in the shadows...</div
         <td>Autodesk Maya</td>
         <td>CI/CD cycle management</td>
       </tr>
-    </table></p>
+    </table></p> -->
+
+    <div class = "tab">
+      <button class = "tablinks active" onclick="openTab(event, 'Tab1')">Programming Languages</button>
+      <button class = "tablinks" onclick="openTab(event, 'Tab2')">Frameworks</button>
+      <button class = "tablinks" onclick="openTab(event, 'Tab3')">Tools</button>
+    </div>
+
+    <div id = "Tab1" class = "tabcontent" style = "display: block;">
+      <h3>Prog Lang Contents</h3>
+      <p> HTML </p> <progress max="100" value="80">80%</progress>
+    </div>
+
+    <div id = "Tab2" class = "tabcontent">
+      <h3>Frameworks</h3>
+      <p> CI/CD cycle management </p>  <progress max="100" value="40">40%</progress>
+    </div>
+
+    <div id = "Tab3" class = "tabcontent">
+      <h3>Tools Contents</h3>
+      <p> Unity </p> <progress max="100" value="60">60%</progress>
+    </div>
+
   </div>
   <div id = "Contact">
     <h1>Contact</h1>
@@ -284,6 +378,21 @@ Don't make too much noise though... you never know what's in the shadows...</div
         modal.style.display = "none";
       }
     }
+
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
   </script>
 </body>
 </html>
