@@ -96,6 +96,40 @@
     .active, .dot:hover {
       background-color: #717171;
     }
+
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.4); 
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; 
+      padding: 20px;
+      border: 1px solid #888;
+      width: 60%; 
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -119,7 +153,13 @@
   <div id = "Projects">
     <h1>Projects</h1>
     <h3>Hush</h3>
+
+    <button id ="openModal">Details</button>
+  <div id ="myModal" class ="modal">
+    <div class = "modal-content">
+      <span class="close">&times;</span>
     <div class="carousel-container">
+
 
       <div class="carousel-slide fade">
         <img src="https://img.itch.zone/aW1nLzEwNzc2NDQzLnBuZw==/original/8Hd3ES.png" alt="Image 1">
@@ -145,7 +185,9 @@
     <div>Navigate darkness using nothing but echolocation - in this game, 
 your only means of sight comes from sounds made: your voice, your interaction, and the environment.
 Don't make too much noise though... you never know what's in the shadows...</div>
+</div>
   </div>
+</div>
   <h3>Little Echos</h3>
   
   <div>Explore the mind of a high school senior, laid out in a larger than life fantastic yet familiar setting where memories manifested into artifacts allowing you to reflect on a story with themes of moving on and growing up.</div>
@@ -214,6 +256,33 @@ Don't make too much noise though... you never know what's in the shadows...</div
       }
       slides[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " active";
+    }
+
+  
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("openModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
   </script>
 </body>
